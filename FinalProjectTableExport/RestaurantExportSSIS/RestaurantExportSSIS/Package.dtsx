@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{0DF93C87-5111-42FD-96FD-3F89630FB514}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{C3D77681-A9C2-4B73-AB7C-8C8035B4DEAD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,6 +33,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{675D7D9B-520F-44F5-B0A5-E23C2AB0B8E4}"
       DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::DestinationFilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -116,7 +118,17 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D2543EB5-B695-4288-BF49-4BCFA900B898}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\SQL\OneDrive - Northeast Wisconsin Technical College\Desktop\FinalProjectTableExport\Customers.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Export Restaurant Table"
